@@ -1,0 +1,100 @@
+*{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #279f76;
+}
+
+main{
+    display: flex;
+    width: 380px;
+    height: 580px;
+    background-color: #ffffff73;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.displayCalc{
+    font-size: 3rem;
+    height: 10rem;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 1rem;
+    background-color: #00000069;
+}
+
+.contenedorNumeros{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.primeraFila{
+    height: fit-content;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.borrarTodo{
+    width: 17rem;
+    height: 5rem;
+    border-radius: 10px;
+    border: none;
+    background: #7955489e;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.219);
+    backdrop-filter: blur( 4px );
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    cursor: pointer;
+}
+
+.segundaFila, .terceraFila, .cuartaFila, .quintaFila{
+    height: fit-content;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.numeros{
+    width: 5.6rem;
+    height: 5rem;
+    border-radius: 10px;
+    border: none;
+    background: #ffffff80;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.219);
+    backdrop-filter: blur( 4px );
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    cursor: pointer;
+}
+
+.cero{
+    width: 11.2rem;
+    height: 5rem;
+    border-radius: 10px;
+    border: none;
+    background: #ffffff80;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.219);
+    backdrop-filter: blur( 4px );
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    cursor: pointer;
+}
+
+.igual{
+    width: 5.6rem;
+    height: 5rem;
+    border-radius: 10px;
+    border: none;
+    background: #ffcf9d;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.219);
+    backdrop-filter: blur( 4px );
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    cursor: pointer;
+}

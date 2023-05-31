@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora</title>
+</head>
+<body>
+    <main>
+        <input class="displayCalc" type="text" name="display" id="display" readonly dir="rtl">
+
+        <section class="contenedorNumeros">
+            <span class="primeraFila">
+                <button class="borrarTodo" id="borrar">C</button>
+                <button class="numeros" id="dividir" value="/">/</button>
+            </span>
+            <span class="segundaFila">
+                <button class="numeros" id="siete" value="7">7</button>
+                <button class="numeros" id="ocho" value="8">8</button>
+                <button class="numeros" id="nueve" value="9">9</button>
+                <button class="numeros" id="multiplicar" value="x">X</button>
+            </span>
+            <span class="terceraFila">
+                <button class="numeros" id="cuatro" value="4">4</button>
+                <button class="numeros" id="cinco" value="5">5</button>
+                <button class="numeros" id="seis" value="6">6</button>
+                <button class="numeros" id="restar" value="-">-</button>
+            </span>
+            <span class="cuartaFila">
+                <button class="numeros" id="uno" value="1">1</button>
+                <button class="numeros" id="dos" value="2">2</button>
+                <button class="numeros" id="tres" value="3">3</button>
+                <button class="numeros" id="sumar" value="+">+</button>
+            </span>
+            <span class="quintaFila">
+                <button class="cero" id="cero" value="0">0</button>
+                <button class="numeros" id="punto" value=".">.</button>
+                <button class="igual" id="igual" value="">=</button>
+            </span>
+        </section>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>
