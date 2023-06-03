@@ -24,10 +24,19 @@ main{
     padding: 1rem;
 }
 
+.displayOperacion{
+    text-align: end;
+    font-size: 20px;
+    height: 5rem;
+    border-radius: 10px 10px 0px 0px;
+    border: none;
+    background-color: #00000069;
+}
+
 .displayCalc{
     font-size: 3rem;
-    height: 10rem;
-    border-radius: 10px;
+    height: 5rem;
+    border-radius: 0px 0px 10px 10px;
     border: none;
     margin-bottom: 1rem;
     background-color: #00000069;

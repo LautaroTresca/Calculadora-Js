@@ -1,4 +1,5 @@
 const display = document.getElementById("display");
+const displaySecundario = document.getElementById("displaySecundario");
 const uno = document.getElementById("uno");
 const dos = document.getElementById("dos");
 const tres = document.getElementById("tres");
@@ -17,63 +18,86 @@ const sumar = document.getElementById("sumar");
 const punto = document.getElementById("punto");
 const igual = document.getElementById("igual");
 
-let memoria = [];
+let memoria1 = 0;
+let memoria2 = 0;
 let operador = "";
-let resultado = "";
+let resultado = 0;
 
 function resolver() {
+
     if(operador === "+"){
-        resultado = parseFloat(memoria[0]) + parseFloat(memoria[1]);
-        display.value = resultado
+        resultado += parseFloat(display.value);
+        display.value = resultado;
+    }
+    else if(operador === "-"){
+        resultado -= parseFloat(display.value);
+        display.value = resultado;
+    }
+    else if(operador === "/"){
+        resultado = parseFloat(memoria[0]) / parseFloat(memoria[1]);
+        display.value = resultado;
+        memoria = [];
+    }
+    else if(operador === "x"){
+        resultado = parseFloat(memoria[0]) * parseFloat(memoria[1]);
+        display.value = resultado;
         memoria = [];
     }
 }
 
 uno.addEventListener("click", () => {
-    display.value += uno.value
+    display.value += uno.value;
 })
 dos.addEventListener("click", () => {
-    display.value += dos.value
+    display.value += dos.value;
 })
 tres.addEventListener("click", () => {
-    display.value += tres.value
+    display.value += tres.value;
 })
 cuatro.addEventListener("click", () => {
-    display.value += cuatro.value
+    display.value += cuatro.value;
 })
 cinco.addEventListener("click", () => {
-    display.value += cinco.value
+    display.value += cinco.value;
 })
 seis.addEventListener("click", () => {
-    display.value += seis.value
+    display.value += seis.value;
 })
 siete.addEventListener("click", () => {
-    display.value += siete.value
+    display.value += siete.value;
 })
 ocho.addEventListener("click", () => {
-    display.value += ocho.value
+    display.value += ocho.value;
 })
 nueve.addEventListener("click", () => {
-    display.value += nueve.value
+    display.value += nueve.value;
 })
 cero.addEventListener("click", () => {
-    display.value += cero.value
+    display.value += cero.value;
 })
 borrar.addEventListener("click", () => {
     display.value = "";
+    displaySecundario.value = "";
+    resultado = 0;
 })
 punto.addEventListener("click", () => {
     display.value += punto.value;
 })
 sumar.addEventListener("click", () => {
-    memoria.push(display.value);
+    operador = "+";
+    resultado = parseFloat(display.value);
+    displaySecundario.value += display.value + " + ";
     display.value = "";
-    operador = sumar.value;
+})
+restar.addEventListener("click", () => {
+    operador = "-";
+    resultado = parseFloat(display.value);
+    displaySecundario.value += display.value + " - ";
+    display.value = "";
 })
 dividir.addEventListener("click", () => {})
 multiplicar.addEventListener("click", () => {})
-restar.addEventListener("click", () => {})
 igual.addEventListener("click", () => {
-    memoria.push(display.value);
+    displaySecundario.value += display.value + " = ";
     resolver();
 })
