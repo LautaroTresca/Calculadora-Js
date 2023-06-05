@@ -120,3 +120,20 @@ main{
     border: 1px solid rgba(0, 0, 0, 0.267);
     cursor: pointer;
 }
+
+@media (max-width: 480px) {
+    header{
+        height: 6rem;
+    }
+
+    main{
+        display: flex;
+        width: 380px;
+        height: auto;
+        background-color: #ffffff73;
+        border-radius: 10px;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+}
