@@ -127,13 +127,27 @@ main{
     }
 
     main{
-        display: flex;
-        width: 380px;
+        width: 300px;
         height: auto;
-        background-color: #ffffff73;
-        border-radius: 10px;
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem;
+    }
+
+    .borrarTodo{
+        width: 12rem;
+        height: 4rem;
+    }
+
+    .numeros{
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .igual{
+        width: 8rem;
+        height: 4rem;
+    }
+
+    .cero{
+        height: 4rem;
+        width: 4rem;
     }
 }
