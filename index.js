@@ -21,9 +21,27 @@ const igual = document.getElementById("igual");
 let operador = "";
 let resultado = 0;
 
-function resolver() {
+function verificarDisplay() {
+    if(display.value === ""){
+        display.value = 0;
+    }
+}
 
-    if(operador === "+"){
+function reiniciarDisplaySecundario(){
+    if(resultado === 0){
+        displaySecundario.value = "";
+    }
+}
+
+function actualizarDisplaySecundario(){
+    displaySecundario.value += parseFloat(display.value);
+}
+
+function resolver() {
+    if(display.value === ""){
+        resultado += 0;
+    }
+    else if(operador === "+"){
         resultado += parseFloat(display.value);
     }
     else if(operador === "-"){
@@ -32,7 +50,7 @@ function resolver() {
     else if(operador === "x"){
         resultado = resultado * parseFloat(display.value);
     }
-    else if(operador === "/"){
+    else if(operador === "÷"){
         resultado = resultado / parseFloat(display.value);
     }
     
@@ -40,9 +58,6 @@ function resolver() {
     resultado = 0;
     
 }
-
-
-
 
 
 uno.addEventListener("click", () => {
@@ -120,43 +135,57 @@ punto.addEventListener("click", () => {
 
 
 sumar.addEventListener("click", () => {
-    operador = "+";
-    resultado += parseFloat(display.value);
-    displaySecundario.value += parseFloat(display.value) + " + ";
-    display.value = "";   
-
-    console.log(resultado);
+    reiniciarDisplaySecundario();
+    if(display.value !== ""){
+        operador = "+";
+        resultado += parseFloat(display.value);
+        displaySecundario.value += parseFloat(display.value) + operador;
+        display.value = "";   
+    }
 })
 
 
 
 restar.addEventListener("click", () => {
-    operador = "-";
-    resultado = parseFloat(display.value);
-    displaySecundario.value += display.value + " - ";
-    display.value = "";
+    reiniciarDisplaySecundario();
+    if(display.value !== ""){
+        operador = "-";
+        resultado += parseFloat(display.value);
+        displaySecundario.value += parseFloat(display.value) + operador;
+        display.value = "";
+    }
 })
 
 
 
 multiplicar.addEventListener("click", () => {
-    operador = "x";
-    resultado = parseFloat(display.value);
-    displaySecundario.value += display.value + " x ";
-    display.value = "";
+    reiniciarDisplaySecundario();
+    if(display.value !== ""){
+        operador = "x";
+        resultado = parseFloat(display.value);
+        displaySecundario.value += parseFloat(display.value) + operador;
+        display.value = "";
+    }
 })
 
 
 
 dividir.addEventListener("click", () => {
-    operador = "/";
-    resultado = parseFloat(display.value);
-    displaySecundario.value += display.value + " ÷ ";
-    display.value = "";
+    reiniciarDisplaySecundario();
+    if(display.value !== ""){
+        operador = "÷";
+        resultado = parseFloat(display.value);
+        displaySecundario.value += parseFloat(display.value) + operador;
+        display.value = "";
+    }
 })
 
 
 
+
+
 igual.addEventListener("click", () => {
+    verificarDisplay();
+    actualizarDisplaySecundario();
     resolver();
 })
