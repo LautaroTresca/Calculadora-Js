@@ -207,7 +207,3 @@ igual.addEventListener("click", () => {
     reiniciarDisplaySecundario();
     resolver();
 });
-
-function hola(){
-    console.log("hola");
-}
