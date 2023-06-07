@@ -23,27 +23,27 @@ let resultado = 0;
 
 function resolver() {
 
-    if(display.value === ""){
-        display.value = resultado;    
-    }
-    
     if(operador === "+"){
         resultado += parseFloat(display.value);
-        display.value = resultado;
     }
     else if(operador === "-"){
         resultado -= parseFloat(display.value);
-        display.value = resultado;
     }
     else if(operador === "x"){
         resultado = resultado * parseFloat(display.value);
-        display.value = resultado;
     }
     else if(operador === "/"){
         resultado = resultado / parseFloat(display.value);
-        display.value = resultado;
     }
+    
+    display.value = resultado + " = ";
+    resultado = 0;
+    
 }
+
+
+
+
 
 uno.addEventListener("click", () => {
     display.value += uno.value;
@@ -121,9 +121,11 @@ punto.addEventListener("click", () => {
 
 sumar.addEventListener("click", () => {
     operador = "+";
-    resultado = parseFloat(display.value);
-    displaySecundario.value += display.value + " + ";
-    display.value = "";
+    resultado += parseFloat(display.value);
+    displaySecundario.value += parseFloat(display.value) + " + ";
+    display.value = "";   
+
+    console.log(resultado);
 })
 
 
@@ -156,6 +158,5 @@ dividir.addEventListener("click", () => {
 
 
 igual.addEventListener("click", () => {
-    displaySecundario.value += display.value + " = ";
     resolver();
 })
