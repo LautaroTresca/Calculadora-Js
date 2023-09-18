@@ -22,6 +22,7 @@ let operador = "";
 let memoria = 0;
 let resultado = 0;
 
+
 function resolver() {
     if(operador === "+"){
         resultado = memoria + parseFloat(display.value);
@@ -54,8 +55,9 @@ function reiniciarDisplay() {
 }
 
 function reiniciarDisplaySecundario(){
-    displaySecundario.value = "";
-   
+    if(displaySecundario.value == resultado){
+        displaySecundario.value = "";
+    }
 }
 
 
@@ -71,7 +73,7 @@ sumar.addEventListener("click", () => {
 
 
 restar.addEventListener("click", () => {
-    if((display.value !== "") && (displaySecundario.value.length < 2)){
+    if(display.value !== ""){
         operador = "-";
         memoria = parseFloat(display.value);
         displaySecundario.value += operador;
@@ -82,7 +84,7 @@ restar.addEventListener("click", () => {
 
 
 multiplicar.addEventListener("click", () => {
-    if((display.value !== "") && (displaySecundario.value.length < 2)){
+    if(display.value !== ""){
         operador = "x";
         memoria = parseFloat(display.value);
         displaySecundario.value += operador;
@@ -93,7 +95,7 @@ multiplicar.addEventListener("click", () => {
 
 
 dividir.addEventListener("click", () => {
-    if((display.value !== "") && (displaySecundario.value.length < 2)){
+    if(display.value !== ""){
         operador = "÷";
         memoria = parseFloat(display.value);
         displaySecundario.value += operador;
@@ -121,6 +123,7 @@ dos.addEventListener("click", () => {
 
 tres.addEventListener("click", () => {
     reiniciarDisplay();
+    reiniciarDisplaySecundario();
     display.value += tres.value;
     displaySecundario.value += tres.value;
 });
@@ -204,6 +207,5 @@ igual.addEventListener("click", () => {
         memoria += 0;
     }
     verificarDisplay();
-    reiniciarDisplaySecundario();
     resolver();
 });
